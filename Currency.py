@@ -1,6 +1,6 @@
 ch='y'
-f=open("E:\Study\Bhanu.txt","r+")
 while(ch=='y'or ch=='Y'):
+    f=open("E:\Study\Bhanu.txt","r+")
     c=input("Enter he string in which you want to convert : ")
     d=0
     l = []
@@ -33,5 +33,6 @@ while(ch=='y'or ch=='Y'):
         f.write("%s:"%c)
         f.write("%f"%i)
         f.write("\n")
+    f.close()
     ch=input("Want to Continue : ")
-f.close()
+
