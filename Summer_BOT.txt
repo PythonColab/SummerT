@@ -1,0 +1,18 @@
+Summer [BOT]
+
+An attempt to make a very simple, Personal Assistant that understands speech as well as text input and is capable of performing tasks other than conversing.
+This is not based on ML and AI it simply uses pattern matching.
+It can converse with you like giving respond to "Hey Summer" or "What is Time Right Now?"
+It can also seach data on internet using scraping tools.
+It can search files in your system.
+It can control your system through voice control.
+
+Library Files : 
+
+AIML (Artificial Intelligence Modelling Language) - For Pattern Matching
+Speech Recognition
+PyAudio is required for microphone input
+ttsx: (Offline Text to Speech Service)
+PyGame: (For audio playback with gTTS)
+gTTS: (Google Text to Speech service)
+Scraping Tools 
