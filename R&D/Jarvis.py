@@ -4,6 +4,7 @@ import time
 import os
 from pygame import mixer
 import pyttsx3
+import pygame
  
 def speak(audioString):
     engine = pyttsx3.init()
@@ -51,13 +52,21 @@ def jarvis(data,name):
         speak("Hold on "+name+", Opening Chrome")
         os.system("start chrome \"https://www.google.co.in/search?q="+str1+"\"")
 
+    if "play music" in data:
+        speak("Hold on "+name+", Playing Music")
+        pygame.init()
+        pygame.mixer.music.load("music.mp3")
+        pygame.mixer.music.play()
+
+    
+
 time.sleep(2)
 speak("Hi I am Jarvis, Whats Your Name : ")
-a=input("Choose Input Method:\n1. Form MIC\n2. From Keyboard \n: ")
-if(a==1):
+numa=input("Choose Input Method:\n1. Form MIC\n2. From Keyboard \n: ")
+if(numa=='1'):
     name=recordAudio()
-elif(a==2):
-    name=input()
+elif(numa=='2'):
+    name=input("Enter The Name : ")
 print("Initializing.../.")
 speak("Hi "+name+", what can I do for you?")
 while 1:
