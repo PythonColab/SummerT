@@ -2,15 +2,15 @@ import speech_recognition as sr
 from time import ctime
 import time
 import os
-from pygame import mixer
+#from pygame import mixer
 import pyttsx3
-import pygame
+#import pygame
+import win32com.client as wincl
+sp = wincl.Dispatch("SAPI.SpVoice")
  
-def speak(audioString):
-    engine = pyttsx3.init()
-    engine.say(audioString)
+def speak(audioString,sp):
     print(audioString)
-    engine.runAndWait()
+    sp.Speak(audioString)
  
 def recordAudio():
     r = sr.Recognizer()
@@ -61,7 +61,7 @@ def jarvis(data,name):
     
 
 time.sleep(2)
-speak("Hi I am Jarvis, Whats Your Name : ")
+speak("Hi I am Jarvis, Whats Your Name : ",sp)
 numa=input("Choose Input Method:\n1. Form MIC\n2. From Keyboard \n: ")
 if(numa=='1'):
     name=recordAudio()

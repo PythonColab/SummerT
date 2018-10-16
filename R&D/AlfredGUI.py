@@ -16,7 +16,7 @@ chatbot = ChatBot(
     'Ron Obvious',
     trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
 )
-#chatbot.train("chatterbot.corpus.english")
+chatbot.train("chatterbot.corpus.english")
 
 print("Hi I am Alfred, Whats Your Name : ")
 name=input("Enter The Name : ")
@@ -29,7 +29,7 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 logo = PhotoImage(file="jar2.gif")
 lb1 = Label(window, text="ALFRED",height=3,bg="Black",fg="RED",font=("Times",12))
 lb1.grid(column=0, row=0,columnspan=4)
-lb2 = Label(window,anchor="nw",text="Click Speak for Starting",height=15,width=65,borderwidth=4, relief="sunken",justify=LEFT,bg="Cyan",fg="GREEN")
+lb2 = Label(window,anchor="nw",text="Click Speak/Enter for Starting",height=15,width=65,borderwidth=4, relief="sunken",justify=LEFT,bg="Cyan",fg="GREEN")
 lb2.configure(font=("Comic Sans MS",8))
 lb2.grid(column=0, row=1)
 lb3 = Label(window,height=2)
@@ -149,18 +149,18 @@ def jarvis(data,name):
         count=0
         for i in s[:2]:
             p(str(i['rank'])+" :")
-            p("Keyword : "+i['description'])
-            p("Title : "+i['description'])
-            p("Description : "+i['description'])
-            p("Full Link : "+i['link'])
+            p("Keyword : "+str(i['keyword']))
+            p("Title : "+str(i['title']))
+            p("Description : "+str(i['description']))
+            p("Full Link : "+str(i['link']))
         p("For more visit cmd GOOGLE LOG")
         print("\n\nGOOGLE LOG : \n")
         for i in s:
             print(str(i['rank'])+" :")
-            print("Keyword : "+i['description'])
-            print("Title : "+i['description'])
-            print("Description : "+i['description'])
-            print("Full Link : "+i['link'])
+            print("Keyword : "+str(i['keyword']))
+            print("Title : "+str(i['title']))
+            print("Description : "+str(i['description']))
+            print("Full Link : "+str(i['link']))
 
     elif "wiki" in data:
         str1 = data.strip('wiki')

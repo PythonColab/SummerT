@@ -44,7 +44,7 @@ mixer.music.load("temp.mp3")
 mixer.music.play()
 """
 
-#Text To Speech 2nd Method
+#Text To Speech 2
 """
 import pyttsx3
 engine = pyttsx3.init()
